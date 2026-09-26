@@ -1,0 +1,40 @@
+#include <stdio.h>
+int main() 
+{
+    int arr[] = {2, 3, 4, 5, 6, 7, 8, 9};
+     printf("original numbers: ");
+    for (int i = 0; i < 8; i++) 
+    {
+        printf("%d ", arr[i]);
+    }
+    int n = sizeof(arr)/sizeof(arr[0]);
+    int sum = 0;
+    printf("\n\nAlternate numbers1: ");
+    for (int i = 0; i < n; i=i+2) 
+    {
+        printf("%d ", arr[i]);
+    }
+    printf("\nSquared values: ");
+    for (int i = 0; i < n; i=i+2) 
+    {
+        int squared = arr[i] * arr[i];
+        printf("%d ", squared);
+        sum += squared;
+    }
+    printf("\n\nAlternate numbers2: ");
+    for (int i = 2; i < n; i=i+4)
+    {
+        printf("%d ", arr[i]);
+    }
+
+    printf("\nCubed values: ");
+    for (int i = 2; i < n; i=i+4) 
+    {
+        int cubed = arr[i] * arr[i] * arr[i];
+        printf("%d ", cubed);
+        sum += cubed;
+    }
+    printf("\n\nTotal Sum of processed numbers: %d\n", sum);
+
+    return 0;
+}
